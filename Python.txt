@@ -1,0 +1,20 @@
+python -m spacy download model_name
+import spacy
+nlp = spacy.load('en')
+doc = nlp(u'I want a pizza.')
+for token in doc:
+  print(token.text, token.pos_, token.dep_)
+  I     PRON   nsubj
+want  VERB   ROOT
+a     DET    det
+pizza NOUN   dobj
+     PUNCT  punct
+	..
+f= open("utterances.txt","rb")
+contents =f.read()
+doc = nlp(contents.decode('utf8')) 
+for sent in doc.sents:
+  for token in sent: 
+    #processing each token in a sentence
+	doc = nlp(u'I know it You know it.')
+        print(len(list(doc.sents))) 
